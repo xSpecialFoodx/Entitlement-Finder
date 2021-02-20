@@ -743,10 +743,12 @@ def check_entitlement():  # returns -1 in case of failure, 0 in case of not find
                             for wrapped_entitlement_cell in wrapped_entitlement:
                                 wrapped_entitlement_cell_character = chr(int(wrapped_entitlement_cell, 16))
 
-                                possible_entitlement_text += wrapped_entitlement_cell_character
-
-                                if (wrapped_entitlement_cell_character in entitlement_allowed_characters) is False:
+                                if (wrapped_entitlement_cell_character in entitlement_allowed_characters) is True:
+                                    possible_entitlement_text += wrapped_entitlement_cell_character
+                                else:
                                     if (wrapped_entitlement_cell_character in suggested_entitlement_allowed_characters) is True:
+                                        possible_entitlement_text += wrapped_entitlement_cell_character
+
                                         if possible_entitlement_level == 0:
                                             possible_entitlement_level = 1
                                     else:
