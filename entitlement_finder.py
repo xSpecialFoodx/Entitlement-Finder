@@ -575,7 +575,8 @@ def check_entitlement_allowed_characters():
 
     suggested_entitlement_allowed_characters = (
         [
-            '!'
+            ' '
+            , '!'
             , '"'
             , '#'
             , '$'
